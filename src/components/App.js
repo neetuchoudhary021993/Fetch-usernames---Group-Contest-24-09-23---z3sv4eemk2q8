@@ -3,9 +3,26 @@ import '../styles/App.css';
 import { useState, useEffect } from 'react';
 const App = () => {
 //code here 
+ const [id, setID] = useState[1];
+ const [name, setName] = useState['']
  
-
-
+useEffect(() => {   
+    fetch(`https://content.newtonschool.co/v1/pr/main/users/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setName(data.name);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [id]);
+ 
+function changeInput(e) {
+  const newId = parseInt(e.target.value, 10);
+    if (!isNaN(newId) && newId >= 1 && newId <= 10) {
+      setId(newId);
+    }
+}
 
   return (
     <div className="App">
