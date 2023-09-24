@@ -3,8 +3,8 @@ import '../styles/App.css';
 import { useState, useEffect } from 'react';
 const App = () => {
 //code here 
- const [id, setID] = useState[1];
- const [name, setName] = useState['']
+const [id, setId] = useState(1)
+ const [name, setName] = useState('')
  
 useEffect(() => {   
     fetch(`https://content.newtonschool.co/v1/pr/main/users/${id}`)
